@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script></script>
+    <script src="#"></script> -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        
+    </div>    
+
+    <!-- 1 ex -->
+    <script>
+        let name = prompt('What is your name?');
+        alert('Hi! Your name is ' + name + ' right?' + ' Let`s go!' );
+    </script>
+    <!-- 2 ex -->
+    <script>
+        let year = prompt('Please enter your year of birth: ');
+        const currentYear = 2022;
+        let age = +currentYear - +year;
+        alert('You are ' + age + ' years old?');
+    </script>
+    <!-- 3 ex -->
+    <script>
+        let side = prompt('Enter the length of square side: ');
+        alert('The perimetre of your square is ' + (side*4) + ' cm.');
+    </script>
+    <!-- 4 ex -->
+    <script>
+        let radius = prompt('Enter the radius of a circle: ');
+        const P = 3.14;
+        let square = P * (radius * radius);
+        alert('The square of tour circle is equal to ' + square);
+    </script>
+    <!-- 5 ex -->
+    <script>
+        let time = prompt('How much time did you spend? (in hours)');
+        let distance = prompt('What distance to be made? (in km`s)');
+        let speed = distance/time;
+        alert('Your speed is equal to ' + speed);
+    </script>
+    <!-- 6 ex -->
+    <script>
+        const value = 0.94;
+        let dollar = prompt('Enter dollar value you want to exchange: ');
+        let euro = dollar * value;
+        alert('You recieve ' + euro + ' euro.');
+    </script>
+</body>
+</html>
