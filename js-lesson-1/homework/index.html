@@ -70,5 +70,23 @@
             output.innerHTML = nameInput.value;
         }
     </script>
+    <!-- Convertor eur -->
+    <section>
+        <h4>Enter the number of euro you have:</h4>
+        <input type="text" class="inputValue">
+        <span class="outputEur">?</span>
+        <button class="button-exch">Exhange</button>
+
+    </section>
+    <script>
+        let euroValue = document.querySelector('.inputValue');
+        let euroOutput = document.querySelector('.outputEur');
+        let buttonExch = document.querySelector('.button-exch');
+        const exhange = 38;
+        buttonExch.onclick = () => {
+            euroOutput.innerHTML = +euroValue.value * +exhange;
+        }
+
+    </script>
 </body>
 </html>
