@@ -4,14 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet"> 
+   
     <!-- <script></script>
     <script src="#"></script> -->
     <style>
+        *{
+            transition: all 0.5s ease-in-out;
+        }
+
+        body{
+            background: rgb(191, 188, 202);
+            font-family: 'Poppins', sans-serif;
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+        input{
+            border: none;
+            width: 200px;
+            height: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 23px;
+            background: rgb(236, 233, 248);
+        }
         section{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+        }
+        .button{
+            background:  rgb(158, 70, 70);
+            width: 100px;
+            height: 30px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+        }
+        .button:hover{
+            background:rgb(226, 122, 122) ;
+            color: white;
         }
     </style>
     <title>Document</title>
@@ -22,43 +56,43 @@
     </div>    
 
     <!-- 1 ex -->
-    <script>
+    <!-- <script>
         let name = prompt('What is your name?');
         alert('Hi! Your name is ' + name + ' right?' + ' Let`s go!' );
-    </script>
+    </script> -->
     <!-- 2 ex -->
-    <script>
+    <!-- <script>
         let year = prompt('Please enter your year of birth: ');
         const currentYear = 2022;
         let age = +currentYear - +year;
         alert('You are ' + age + ' years old?');
-    </script>
+    </script> -->
     <!-- 3 ex -->
-    <script>
+    <!-- <script>
         let side = prompt('Enter the length of square side: ');
         alert('The perimetre of your square is ' + (side*4) + ' cm.');
-    </script>
+    </script> -->
     <!-- 4 ex -->
-    <script>
+    <!-- <script>
         let radius = prompt('Enter the radius of a circle: ');
         const P = 3.14;
         let square = P * (radius * radius);
         alert('The square of tour circle is equal to ' + square);
-    </script>
+    </script> -->
     <!-- 5 ex -->
-    <script>
+    <!-- <script>
         let time = prompt('How much time did you spend? (in hours)');
         let distance = prompt('What distance to be made? (in km`s)');
         let speed = distance/time;
         alert('Your speed is equal to ' + speed);
-    </script>
+    </script> -->
     <!-- 6 ex -->
-    <script>
+    <!-- <script>
         const value = 0.94;
         let dollar = prompt('Enter dollar value you want to exchange: ');
         let euro = dollar * value;
         alert('You recieve ' + euro + ' euro.');
-    </script>
+    </script> -->
 
     <!-- hard mode -->
     <!-- name of user -->
@@ -66,7 +100,7 @@
         <h4>Enter your name:</h4>
         <input type="text" class="inputName">
         <span class="output">?</span>
-        <button class="button-send">Send</button>
+        <button class="button button-send">Send</button>
         
     </section>
     <script>
@@ -83,7 +117,7 @@
         <h4>Enter the number of euro you have:</h4>
         <input type="text" class="inputValue">
         <span class="outputEur">?</span>
-        <button class="button-exch">Exhange</button>
+        <button class="button button-exch">Exhange</button>
 
     </section>
     <script>
@@ -94,7 +128,6 @@
         buttonExch.onclick = () => {
             euroOutput.innerHTML = +euroValue.value * +exhange + ' UAH';
         }
-
     </script>
 </body>
 </html>
