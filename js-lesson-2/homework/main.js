@@ -22,7 +22,6 @@ alert('And you have ' + (cash%elsecash));
 
 // 5 ex
 let number = prompt('Enter the 3-section number:');
-// alert((number%10.000));
 let numberTone = number;
 let sum = 0;
 while(numberTone > 0){
