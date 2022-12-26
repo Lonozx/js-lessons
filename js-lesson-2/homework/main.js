@@ -51,5 +51,6 @@ sizeHDD *= 1000;
 const file = 820;
 let but = document.querySelector('button').onclick = () => {
     let out = document.querySelector('span').innerHTML = sizeHDD/file + ' count of files is stored';
+    console.log(out);
     let par = document.querySelector('p').innerHTML = sizeHDD%file + 'MB left';
 }
