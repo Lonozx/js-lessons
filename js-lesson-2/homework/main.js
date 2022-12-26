@@ -43,3 +43,13 @@ alert('Cash with persent - '+ lastone);
 // false 
 // true 
 // false
+
+// Extended 
+
+let sizeHDD = document.querySelector('.input-1').value;
+sizeHDD = sizeHDD * 1000;
+const file = 820;
+let but = document.querySelector('button').onclick = () => {
+    let out = document.querySelector('span').innerHTML = sizeHDD/file + ' count of files is stored';
+    let par = document.querySelector('p').innerHTML = sizeHDD%file + 'MB left';
+}
