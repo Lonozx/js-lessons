@@ -37,7 +37,9 @@ let per = prompt('Enter the persantage: ');
 per /= 100;
 let result = cashier*per;
 let lastone = +cashier + +result;
-alert('Cash with persent - '+ lastone);
+alert('Cash with persent for a year - '+ lastone);
+alert('Cash with persent for 2 months - '+ result/12);
+
 
 // 7 ex
 // false 

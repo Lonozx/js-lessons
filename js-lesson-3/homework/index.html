@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPapaerScissors</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+        body{
+            background: rgb(68, 36, 36);
+            color: white;
+        }
+        input{
+            border: none;
+            width: 150px;
+            height: 30px;
+            color: rgb(153, 80, 80);
+            /* text-transform: uppercase; */
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .btn-out{
+            width: 100px;
+            height: 50px;
+            background: rgb(250, 132, 132);
+            border: none;
+            color: white;
+        }
+        .btn-out:hover{
+            background: rgb(153, 80, 80);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <h2>Bet who will win!</h2>
+        <input type="text" class="input-1">
+        <button class="btn-out">Play!</button>
+        <h2 class="output">Your result
+            <span class="winner"></span>
+        </h2>
+
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

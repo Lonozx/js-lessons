@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+        body{
+            background: rgb(126, 120, 64);
+            color: white;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 15px;
+            background: rgb(218, 206, 107);
+            color: white;
+        }
+        button:hover{
+            background: rgb(172, 163, 85);
+            cursor: pointer;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .container__buttons{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            width: 150px;
+            height: 50px;
+            border-radius: 15px;
+            border: rgb(189, 182, 92) 1px solid;
+            color: white;
+            background: transparent;
+        }
+        .clear{
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Введіть свій вік</h2>
+        <input type="text" class="input-age">
+        <span class="out-age">☢️</span>
+        <div class="container__buttons">
+        <button class="count-btn">Що про мене скажете?</button>
+        <button class="clear">🔄</button>
+    </div>
+    </div>
+    <div class="container">
+        <h2>Введіть число від 0 до 9</h2>
+        <input type="text" class="input-sign">
+        <span class="out-sign">☢️</span>
+            <button class="sign-btn">Що там за символ?</button>
+    </div>
+
+    <div class="container">
+        <h2>Введіть діапазон (от-до)</h2>
+        <input type="text" class="input-dial">
+        <input type="text" class="input-dial2">
+        <span class="out-dial">☢️</span>
+            <button class="dial-btn">Покажіть мені числа</button>
+    </div>
+    <div class="container">
+        <h2>Введіть два числа</h2>
+        <input type="text" class="input-digit">
+        <input type="text" class="input-digit2">
+        <span class="out-digit">☢️</span>
+            <button class="digit-btn">Показати найбільший дільник</button>
+    </div>
+    <div class="container">
+        <h2>Введіть любе число</h2>
+        <input type="text" class="input-dev">
+        <span class="out-dev">☢️</span>
+            <button class="dev-btn">Вивести всі дільники</button>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
