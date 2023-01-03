@@ -83,10 +83,12 @@ let outdev = document.querySelector('.out-dev');
 let btndev = document.querySelector('.dev-btn');
 
 btndev.onclick = () => {
-    let n = 0;
-    while(n < +inpdev.value){
+    outdev.innerHTML = '';
+    let n = 1;
+    while(n <= +inpdev.value){
         n++;
-        +inpdev.value%+inpdev.value==0;
-        outdev.innerHTML = +inpdev.value;
+        if(+inpdev.value%n==0){
+            outdev.innerHTML += n + ' ';
+        }
     }
 }
