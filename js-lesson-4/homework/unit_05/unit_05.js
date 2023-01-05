@@ -6,6 +6,7 @@ let out1 = document.querySelector('.out-1');
 function t1() {
     for(let i=1; i<17;i++){
         out1.innerHTML += `${i}_`;
+        // 1
     }
 }
 
@@ -175,12 +176,13 @@ document.querySelector('.b-10').onclick = t10;
 //     В результате должно получиться так:
 //     one_3_4_two_
 
-let divs11 = document.querySelector('.div-11');
-let out11 = document.querySelector('out-11');
+let divs11 = document.querySelectorAll('.div-11');
+let out11 = document.querySelector('.out-11');
 function t11() {
-    for(let i=1;i<=divs11.length;i++){
+    for(let i=0;i<divs11.length;i++){
         out11.innerHTML += `${divs11[i].innerHTML}_`;
     }
+    
 }
 
 document.querySelector('.b-11').onclick = t11;
@@ -191,18 +193,24 @@ document.querySelector('.b-11').onclick = t11;
 // перебрать их с помощью цикла. Обращение к div выглядит так elem[i]
 // применить к каждому elem[i].style.background = ‘orange’
 
-
+let elem = document.querySelectorAll('.div-12');
 function t12() {
-
+    for(let i=0;i<elem.length;i++){
+        elem[i].style.background = 'orange';
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
 
 //  Task 13
 // С помощью цикла присвойте всем input .i-13 value равное 1 для первого, 2 для второго и 3 для третьего.
-
+let inp13 = document.querySelectorAll('.i-13');
 function t13() {
-
+    let inner = 0;
+    for(let i=0;i<4;i++){
+        inner++;
+        inp13[i].value =inner;
+    }
 }
 
 document.querySelector('.b-13').onclick = t13;
@@ -213,9 +221,14 @@ document.querySelector('.b-13').onclick = t13;
 // перебрать их с помощью цикла. Обращение к элементу выглядит так elem[i]
 // вывести в .out-14 value выбранного. Проверить выбран ли элемент можно с помощью elem[i].checked.
 
-
+let elem14 = document.querySelectorAll('.i-14');
+let out14 = document.querySelector('.out-14');
 function t14() {
-
+    for(let i=0;i<elem14.length;i++){
+        if(elem14[i].checked){
+            out14.innerHTML = elem14[i].value;
+        }
+    }
 }
 
 document.querySelector('.b-14').onclick = t14;
@@ -224,9 +237,11 @@ document.querySelector('.b-14').onclick = t14;
 // Кнопка .b-15 запускает функцию t15  Функция должна выводить следующую последовательность в .out-15:
 // 10_0_9_1_8_2_7_3_6_4_5_5_4_6_3_7_2_8_1_9_0_10_
 // Подсказка (10 - i) + '_' + i + '_'
-
+let out15 = document.querySelector('.out-15');
 function t15() {
-
+    for(let i=0;i<=10;i++){
+        out15.innerHTML += `${10-i}_ ${i}_`;
+    }
 }
 
 document.querySelector('.b-15').onclick = t15;
