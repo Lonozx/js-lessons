@@ -13,7 +13,7 @@ let timeSetter = document.querySelector('.timeSetter');
 let hours = document.querySelector('.hours');
 let minutes = document.querySelector('.minutes');
 let seconds = document.querySelector('.seconds');
-let select = document.querySelectorAll('option');
+let select = document.querySelector('.creative');
 let floatButton = document.querySelector('.float');
 let floatInput1 = document.querySelector('.float1');
 let floatInput2 = document.querySelector('.float2');
@@ -126,47 +126,49 @@ let floatin = {
     upper: 1.4,
     down: 1.6,
     summary: function(x, y){
+        this.upper = x;
+        this.down = y;
         return x+y;
     },
     minus: function(x, y){
+        this.upper = x;
+        this.down = y;
         return x-y;
     },
     multi: function(x, y){
+        this.upper = x;
+        this.down = y;
         return x*y;
     },
     division: function(x, y){
+        this.upper = x;
+        this.down = y;
         return x/y;
     },
     divisionExe: function(x, y){
+        this.upper = x;
+        this.down = y;
         return x%y;
     },
 }
     select.onchange = () =>{
-    floatInput1.value='';
-    floatInput2.value='';
-    let summary = floatin.summary(floatInput1, floatInput2);
+    let summary = floatin.summary(+floatInput1.value, +floatInput2.value);
     let minus = floatin.minus(floatInput1, floatInput2);
     let multi = floatin.multi(floatInput1, floatInput2);
     let division = floatin.division(floatInput1, floatInput2);
     let divisionExe = floatin.divisionExe(floatInput1, floatInput2);
-    if(option.value == '+'){
-        out6.innerHTML = summary;
+    if(select.onchange){
+    switch(select.value){
+        case '+': out6.innerHTML = +summary; break;
+        case '-': minus; break;
+        case '*': multi; break;
+        case '/': division; break;
+        case '%': divisionExe; break;
+        default: out6.innerHTML = 'DFA';
     }
 }
-    if(option.minus){
-        out6.innerHTML = minus;
-    }
-
-    if(option.multi){
-        out6.innerHTML = multi;
-    }
-
-    if(option.division){
-        out6.innerHTML = division;
-    }
-
-    if(option.divisionExe){
-        out6.innerHTML = divisionExe;
+    floatInput1.value='';
+    floatInput2.value='';
     }
 
   
