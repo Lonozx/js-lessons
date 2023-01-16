@@ -10,8 +10,9 @@ function showArr(domElem, arr) {
 }
 
 let d1 = [33, 'best', 66, 'best'];
-
+let inp1 = document.querySelector('.i-1');
 function f1() {
+    d1.push(inp1.value);
     /**
      * ваш код здесь
      */
@@ -25,7 +26,7 @@ document.querySelector('.b-1').onclick = f1;
 // функция выполняется при нажатии кнопки b-2
 
 function f2() {
-
+    d1.pop();
     showArr('.out-2', d1);
 }
 
@@ -36,7 +37,7 @@ document.querySelector('.b-2').onclick = f2;
 // функция выполняется при нажатии кнопки b-3
 
 function f3() {
-
+    d1.shift();
     showArr('.out-3', d1);
 }
 
@@ -46,9 +47,9 @@ document.querySelector('.b-3').onclick = f3;
 // Напишите функцию f4, которая применяет метод push к массиву d1, данные для массива берите из i-4, а затем выводит его (showArr) в .out-4
 // функция выполняется при нажатии кнопки b-4
 
-
+let inp4 = document.querySelector('.i-4');
 function f4() {
-
+    d1.push(inp4.value);
     showArr('.out-4', d1);
 }
 
@@ -57,9 +58,9 @@ document.querySelector('.b-4').onclick = f4;
 // Task 5
 // Напишите функцию f5, которая применяет метод unshift к массиву d1, данные для массива берите из i-5, а затем выводит его (showArr) в .out-5
 // функция выполняется при нажатии кнопки b-5
-
+let inp5 = document.querySelector('.i-5');
 function f5() {
-
+    d1.unshift(inp5.value);
     showArr('.out-5', d1);
 }
 
@@ -72,9 +73,9 @@ document.querySelector('.b-5').onclick = f5;
 // Вывод в out-6
 
 let d6 = ['test', 5, 12];
-
+let inp6 = document.querySelector('.i-6');
 function f6() {
-
+    d6[d6.length] = inp6.value;
     showArr('.out-6', d6);
 }
 
@@ -89,7 +90,9 @@ document.querySelector('.b-6').onclick = f6;
 let d7 = ['china', 'india', 'brazil', 'japan', 'egypt'];
 
 function f7() {
-
+    for (let i = 0; i < d7.length; i++) {
+        d7[d7.length - 1] -= d7[d7.length];
+    }
     showArr('.out-7', d7);
 }
 
@@ -102,9 +105,9 @@ document.querySelector('.b-7').onclick = f7;
 // Вывод в out-8
 
 let d8 = [2, '4', 12, 67, 'hello'];
-
+let inp8 = document.querySelector('.i-8');
 function f8() {
-
+    d8[0] = inp8.value;
     showArr('.out-8', d8);
 }
 
@@ -119,7 +122,12 @@ document.querySelector('.b-8').onclick = f8;
 let d9 = [100, 200, 300, 400, 700, 121];
 
 function f9() {
-
+    for (let i = 0; i < d9.length; i++) {
+        if (d9[i] < d9[i + 1]) {
+            d9[i] = d9[i + 1]
+            d9[i + 1] = d9[i];
+        }
+    }
     showArr('.out-9', d9);
 }
 
@@ -134,7 +142,7 @@ document.querySelector('.b-9').onclick = f9;
 let d10 = [3, 14, 15, 92, 6];
 
 function f10() {
-
+    d10.reverse();
     showArr('.out-10', d10);
 }
 
@@ -148,9 +156,15 @@ document.querySelector('.b-10').onclick = f10;
 // Вывод в out-11
 
 let d11 = [2, 3, 4, 5, 6, 7];
-
+let inp11 = document.querySelector('.i-11');
+let out11 = document.querySelector('.out-11');
 function f11() {
-
+    for (let i = 0; i < d11.length; i++) {
+        // out = d11[i].indexOf(inp11.value);
+        if (parseInt(inp11.value) == d11[i]) {
+            out11.innerHTML = 1;
+        } else out11.innerHTML = -1;
+    }
 }
 
 document.querySelector('.b-11').onclick = f11;
@@ -163,9 +177,16 @@ document.querySelector('.b-11').onclick = f11;
 // Вывод в out-12
 
 let d12 = [6, 62, 60, 70, 1, 5];
-
+let out12 = document.querySelector('.out-12');
+let inp12 = document.querySelector('.i-12');
 function f12() {
-
+    let out = '';
+    for(let i=0;i<d12.length;i++){
+        if(parseInt(inp12.value)===d12[i]){
+            out = i;
+        } else out = '-1';
+    }
+    out12.innerHTML = out;
 }
 
 document.querySelector('.b-12').onclick = f12;
@@ -178,9 +199,11 @@ document.querySelector('.b-12').onclick = f12;
 
 
 let d13 = [6, 0, 22, 1, 4, 76];
-
+let out13 = document.querySelector('.out-13');
 function f13() {
-
+    for(let i=d13.length;i>0;i--){
+        d13[i] = 
+    }
     showArr('.out-13', d13);
 }
 
@@ -194,9 +217,13 @@ document.querySelector('.b-13').onclick = f13;
 // Вывод в out-14
 
 let d14 = [];
-
+let inp14 = document.querySelector('.i-14');
+let out14 = document.querySelector('.out-14');
 function f14() {
-
+    out14.innerHTML = '';
+    for (let i = 0; i < inp14.value; i++) {
+        d14.push(1);
+    }
     showArr('.out-14', d14);
 }
 
@@ -229,7 +256,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-
+    d16.concat(d161, d162);
     showArr('.out-16', d16);
 }
 

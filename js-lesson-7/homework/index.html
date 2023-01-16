@@ -6,21 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input{
+            width: 150px;
+            height: 50px;
+            border: none;
+            border-bottom: 0.1px rgba(46, 46, 46, 0.472) solid;
+        }
+        button{
+            font-size: 17px;
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <ol>
+    <!-- <ol>
         <li>
             Валідація
         </li>
-    </ol>
+    </ol> -->
     <input class="inp" type="text">
     <input class="inp1" type="number">
-    <button class="btn">add</button>
+    <button class="btn">Додати</button> <span class="errorAccured"></span>
 
 
-    <button class="btn2">Show all</button>
-    <button class="delete">delete</button>
+    <button class="btn2">Показати</button>
+    <button class="delete">Видалити</button>
     <div class="out">---</div>
     <div class="counter">0</div>
     <div class="out2"></div>
@@ -29,21 +51,21 @@
         <h3>Сортування</h3>
 
         <select name="" id="">
-            <option value="">більше 18</option>
-            <option value="">всі меньше 18</option>
-            <option value="">всі кому за 40</option>
+            <option value="">Більше 18</option>
+            <option value="">Всі меньше 18</option>
+            <option value="">Всі кому за 40</option>
         </select>
 
-        <button>show</button>
+        <button>Показати</button>
         <div>0</div>
     </section>
 
     <section>
         <h3>Пошук юзера</h3>
-        <p>не враховувати великі і маленькі букви "A" "a"</p>
+        <p>Не враховувати великі і маленькі букви "A" "a"</p>
         <input type="text">
 
-        <button>show</button>
+        <button>Показати</button>
         <div>0</div>
     </section>
 
@@ -53,20 +75,35 @@
         let inp1 = document.querySelector('.inp1')
         let out = document.querySelector('.out');
         let out2 = document.querySelector('.out2');
-
+        let counter = +document.querySelector('.counter');
+        let error = document.querySelector('.errorAccured');
+        let x=0;
         let users = [];
         document.querySelector('.btn').onclick = () => {
+            error.innerHTML = '';
             let obj = {
                 name: inp.value,
                 age: inp1.value,
             }
-            users.push(obj)
+            if(inp.value!='' && inp1.value!=0) 
+            {users.push(obj);
+                error.innerHTML += `Ви додали юзверя ${obj.name}!`;
+                x++;
+            }
+            else {
+                error.innerHTML = 'Щось тут точно не те 😐';
+            }
+            
+            inp.value = '';
+            inp1.value = '';
+           
         }
+        counter.innerHTML += x;
 
         document.querySelector('.btn2').onclick = () => {
             out.innerHTML = '';
             users.map((item) => {
-                out.innerHTML += `<span>Name is ${item.name}</span> <span>and age = ${item.age}</span>  <button>X</button> <br>`;
+                out.innerHTML += `<span>Ім'я користувача ${item.name}</span> <span>та вік ${item.age}</span>  <button>X</button> <br>`;
             })
         }
 
