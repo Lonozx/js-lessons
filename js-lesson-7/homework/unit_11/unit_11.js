@@ -201,10 +201,11 @@ document.querySelector('.b-12').onclick = f12;
 let d13 = [6, 0, 22, 1, 4, 76];
 let out13 = document.querySelector('.out-13');
 function f13() {
-    for(let i=d13.length;i>0;i--){
-        d13[i] = 
+    let out = '';
+    for(let i=d13.length-1;i>=0;i--){
+        out +=  d13[i] + ', ';
     }
-    showArr('.out-13', d13);
+    showArr('.out-13', out);
 }
 
 document.querySelector('.b-13').onclick = f13;
@@ -234,11 +235,22 @@ document.querySelector('.b-14').onclick = f14;
 // Во всех задачах где говорим второй, третий и т.д. имеем ввиду индекс
 // Вывод - по нажатию кнопки b-15
 // Вывод в out-15
+function hasDublicates(array){
+    return new Set(array).size !== array.length;
+}
 
 let d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
-
+let inp15 = document.querySelector('.i-15');
+let out15 = document.querySelector('.out-15');
 function f15() {
-
+        let inp = parseInt(inp15.value);
+        // if(hasDublicates(d15)){
+            
+        // }
+        if(inp!=d15){
+            d15[d15.length]=inp;
+        } else if(inp===d15) out15.innerHTML = 'Theres no such value';
+    
 
     showArr('.out-15', d15);
 }
@@ -256,7 +268,7 @@ let d161 = [5, 6, 7, 8, 9];
 let d162 = [23, 24, 56, 87];
 
 function f16() {
-    d16.concat(d161, d162);
+    d16=d161.concat(d162);
     showArr('.out-16', d16);
 }
 
@@ -273,7 +285,7 @@ let d171 = ['a', 'b', 'c', 'd'];
 let d172 = [1, 2, 3, 4, 5];
 
 function f17() {
-
+    d17= [...d171, ...d172];
     showArr('.out-17', d17);
 }
 
@@ -287,9 +299,12 @@ document.querySelector('.b-17').onclick = f17;
 // Вывод в out-18
 
 let d18 = ['b', 'c', '45', 'e', 'z', 'y'];
-
+let inp18 = document.querySelector('.i-18');
+let out18 = document.querySelector('.out-18');
 function f18() {
-
+    let out = '';
+    out = d18.includes(inp18.value);
+    out18.innerHTML = out;
 }
 
 document.querySelector('.b-18').onclick = f18;
@@ -302,10 +317,15 @@ document.querySelector('.b-18').onclick = f18;
 // Вывод в out-19
 
 let d19 = ['Your', 'payment', 'method', 'will', 'automatically', 'be', 'charged', 'in', 'advance', 'every'];
-let maxString = '';
-
+let maxString = d19[0];
+let out19 = document.querySelector('.out-19');
 function f19() {
-
+    for(let i=0;i<d19.length;i++){
+        if(d19[i].length>maxString.length){
+            maxString = d19[i];
+        }
+    }
+    out19.innerHTML = maxString;
 }
 
 document.querySelector('.b-19').onclick = f19;
@@ -317,7 +337,7 @@ document.querySelector('.b-19').onclick = f19;
 // Вывод в out-20
 
 let d20 = [4, 5, 6, 7, 8, 9, 10];
-
+let out20 = document.querySelector('.out-20');
 function f20() {
 
 }
