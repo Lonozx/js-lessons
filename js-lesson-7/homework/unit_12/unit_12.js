@@ -14,10 +14,11 @@ document.querySelector('.b-1').onclick = f1;
 // Task 2
 // При нажатии b-2 выполняете функцию f2. Функция должна вывести в out-2 значение hi из массива a2. Возвратите это значение.
 
-
+let out2 = document.querySelector('.out-2');
 function f2() {
     let a2 = [[12, 'hi'], [45, 87], [55, 13]];
-
+    out2.innerHTML = a2[0][1];
+    return a2[0][1];
     // return
 }
 
@@ -27,10 +28,11 @@ document.querySelector('.b-2').onclick = f2;
 // Task 3
 // При нажатии b-3 выполняете функцию f3. Функция должна вывести в out-3 значение my из массива a3. Возвратите это значение.
 
-
+let out3 = document.querySelector('.out-3');
 function f3() {
     let a3 = [[1, 2, 3], [3, 4, 5], [6, [7, 'my']]];
-
+    out3.innerHTML = a3[2[1]][1];
+    return a3[2[1]][1];
     // return
 }
 
@@ -40,10 +42,11 @@ document.querySelector('.b-3').onclick = f3;
 // Task 4
 // При нажатии b-4 выполняете функцию f4. Функция должна вывести в out-4 значение go из массива a4. Возвратите это значение.
 
-
+let out4 = document.querySelector('.out-4');
 function f4() {
     let a4 = [[1, 2, 3], 'go', [3, 4, 5], [6, [7, 'my']]];
-
+    out4.innerHTML = a4[1][0];
+    a4[1][0];
     // return
 }
 
