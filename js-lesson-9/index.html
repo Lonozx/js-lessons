@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        // $('.box')
+        let people = [{name: 'Mykhailo',
+                        surname: 'Savichev'}];
+            function mapPeople(){
+                people.map((item)=>{
+                    console.log(item);
+                })
+            }
+        
+    </script>
+</body>
+
+</html>
