@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <section class="main">
+        <div class="container">
+            <h2>Рік та Морті ГероЇ</h2>
+            <nav>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </nav>
+        </div>
+
+        <div class="main__row">
+
+        </div>
+    </section>
+
+    <script>
+        // async function asyncArray(){
+        //     let a = await fetch('https://randomuser.me/api/');
+        //     let array = await a.json();
+        //     console.log(array);
+        // }
+
+        // asyncArray();
+            let out = document.querySelector('.main__row');
+        fetch('https://randomuser.me/api/')
+        .then( data => data.json())
+        .then(data=>{
+            let arr = data.results;
+            arr.array.forEach(element => {
+                let newPers = createItem();
+            out.innerHTML += newPers;
+            });
+            
+        })
+        .catch(err => console.log('Error', err))
+
+        function createItem(item){
+                return `            <div class="main__item">
+                <h2 class="main__title">${item.name}</h2>
+                <img class="main__img" src="${item.image}" alt="">
+                <p class="main__text">Стать:<b> ${item.gender}</b></p>
+                <p class="main__text">Вид:<b> ${item.species}</b></p>
+                <p class="main__text">Стан:<b> ${item.statur}</b></p>
+                <p class="main__text">Дата: <i>${item.created}</i></p>
+            </div>`
+        }
+    </script>
+</body>
+</html>
