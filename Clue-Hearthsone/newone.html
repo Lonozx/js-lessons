@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        let array = [];
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '5b7b057951msh493df1bd5c201abp18600cjsn15f1c8c69265',
+		'X-RapidAPI-Host': 'omgvamp-hearthstone-v1.p.rapidapi.com'
+	}
+};
+const newM = new Promise((resolve, reject)=>{
+fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cardbacks', options)
+	.then(response => response.json())
+	.then(response => {
+        // showUs(response)
+        array = response.img;
+    })
+	.catch(err => console.error(err));
+    resolve()
+});
+
+newM.then(()=>{
+    console.log(array);
+})
+   let showUs =  function(arr){
+        return arr;
+    }
+
+   
+    </script>
+</body>
+</html>

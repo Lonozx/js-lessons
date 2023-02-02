@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        border-radius: 20px;
+        padding: 10px;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(121, 9, 9, 1) 0%,
+          rgba(90, 226, 161, 1) 0%,
+          rgba(57, 214, 43, 1) 100%,
+          rgba(255, 233, 148, 1) 100%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+
+      .out {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(10, 100px);
+      }
+      button {
+        width: 70px;
+        border: 1px solid;
+        border-radius: 20px;
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out2">0</div>
+    <div class="out">
+      <!-- <div class="item">
+        <h5>Name:</h5>
+        <p>Age:</p>
+        <button class="add">Add</button>
+      </div> -->
+    </div>
+
+    <script>
+      let user = [
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+        {
+          name: "Sasha",
+          age: 25,
+        },
+      ];
+      let out = document.querySelector(".out");
+      let fav = [];
+      let out2 = document.querySelector(".out2");
+      function addItem(user) {
+        console.log(user);
+
+        // for (let i = 1; i < user.length; i++) {
+        user.map((item) => {
+          let items = document.createElement("div");
+          let h5 = document.createElement("h5");
+          let p = document.createElement("p");
+          let button = document.createElement("button");
+
+          button.innerHTML = "ADD";
+          items.classList.add("item");
+          h5.innerHTML = `Name - ${item.name}`;
+          p.innerHTML = `Age - ${item.age}`;
+          out.append(items);
+          items.append(h5, p, button);
+        });
+
+        button.onclick = () => {
+          out2.innerHTML = "";
+          fav.push(user);
+          console.log(fav);
+          out2.innerHTML = fav.length;
+        };
+
+        return items;
+        // }
+      }
+
+      addItem(user);
+
+      function showAll() {
+        user.forEach((item) => {
+          out.append(addItem(item));
+        });
+      }
+
+      showAll();
+
+    </script>
+  </body>
+</html>
